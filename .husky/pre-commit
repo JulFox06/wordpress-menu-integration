@@ -1,0 +1,6 @@
+if [ -f ".wp-env.json" ]; then
+    npx lint-staged
+else
+    cd wp-content/themes/jrenard
+    npx lint-staged
+fi
