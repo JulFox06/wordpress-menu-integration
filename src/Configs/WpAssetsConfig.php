@@ -62,7 +62,7 @@ class WpAssetsConfig extends AbstractConfig
         add_filter('block_categories_all', function ($categories, $post) {
             array_unshift($categories, [
                 'slug' => JrenardTheme::THEME_NAME,
-                'title' => 'Webqam'
+                'title' => 'Blocs custom'
             ]);
             return $categories;
         }, 10, 2);
