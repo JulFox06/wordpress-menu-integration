@@ -2,7 +2,6 @@
 
 namespace Jrenard\Src;
 
-use Jrenard\Src\Blocks\AbstractBlock;
 use Jrenard\Src\Configs\AbstractConfig;
 use Jrenard\Src\Plugins\AbstractPlugin;
 use Jrenard\Src\PostTypes\AbstractPostType;
@@ -10,7 +9,7 @@ use Jrenard\Src\Taxonomies\AbstractTaxonomy;
 
 class JrenardTheme
 {
-    public const string PROJECT_NAME = 'jrenard';
+    public const string PROJECT_NAME = 'wordpress-menu-integration';
 
     public const string THEME_NAME = 'jrenard';
 
@@ -104,17 +103,6 @@ class JrenardTheme
     {
         foreach (self::TAXONOMY_CLASS_LIST as $class) {
             /** @var $class AbstractTaxonomy */
-            (new $class())->register();
-        }
-    }
-
-    /**
-     * Register all defined blocks
-     */
-    private function blocks(): void
-    {
-        foreach (self::BLOCK_CLASS_LIST as $class) {
-            /** @var $class AbstractBlock */
             (new $class())->register();
         }
     }
