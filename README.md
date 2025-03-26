@@ -51,3 +51,4 @@ Pour accéder à l'interface d'administration de WordPress, utilisez les identif
 
 - **Corriger les erreurs PHPCS :**  
   `composer run-script phpcs:fix`
+
