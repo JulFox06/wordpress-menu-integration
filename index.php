@@ -1,0 +1,3 @@
+<?php
+
+template('archive-post');

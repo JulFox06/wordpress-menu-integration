@@ -1,0 +1,7 @@
+# If the assets/scss folder is empty, import the Webqam sass-boilerplate
+# https://gitlab.webqam.fr/webqam/boilerplates/sass-boilerplate
+
+# With the vite configuration, this folder should at least contain 3 files :
+# * admin.scss
+# * editor.scss
+# * main.scss

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12">
+  <description>PSR12</description>
+
+  <!-- Utilisation du ruleset WordPress -->
+  <rule ref="PSR12"/>
+
+  <!-- Inclusion de votre dossier -->
+  <file>src/</file>
+
+  <!-- Personnalisation de la règle de longueur des lignes -->
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="120"/> <!-- Avertissement après 120 caractères -->
+      <property name="absoluteLineLimit" value="150"/> <!-- Erreur après 150 caractères -->
+    </properties>
+  </rule>
+</ruleset>
+

@@ -1,0 +1,45 @@
+{
+  "name": "jrenard/theme-wordpress",
+  "description": "Jrenard wordpress theme",
+  "type": "wordpress-theme",
+  "license": "GNU GENERAL PUBLIC",
+  "version": "v3.0",
+  "scripts": {
+    "phpcs:fix": "php vendor/bin/phpcbf src/"
+  },
+  "require": {
+    "php": "8.3.*",
+    "wpengine/advanced-custom-fields-pro": "@stable"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "rector/rector": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jrenard\\": "./",
+      "Jrenard\\Src\\": "src/"
+    }
+  },
+  "repositories": {
+    "acf": {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    },
+    "platform": {
+      "php": "8.3"
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/wp-env-plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  }
+}
