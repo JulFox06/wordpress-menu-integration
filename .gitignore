@@ -1,0 +1,20 @@
+# Ignore env file
+.env
+
+# Ignore ide generated files
+.idea/
+.DS_Store
+
+# Ignore third party resources
+/node_modules/
+
+# Ignore compiled assets
+/dist/
+
+# Ignore composer dependencies
+/vendor/
+
+# Ignore generated language files
+/languages/*
+/languages/**/*
+!/languages/.gitkeep
