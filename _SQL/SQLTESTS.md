@@ -18,9 +18,7 @@ SELECT wp_users.display_name, COUNT(wp_posts.ID)
     FROM wp_posts
     JOIN wp_users ON wp_posts.post_author = wp_users.ID
     WHERE wp_posts.post_type = 'post'
-      AND wp_posts.post_status = 'publish'
-    GROUP BY wp_users.ID
-    ORDER BY COUNT(wp_posts.ID) DESC;
+      AND wp_posts.post_status = 'publish';
 ```
 
 3. Écrivez une requête pour récupérer le titre et la valeur d'une méta-donnée spécifique (par exemple `'_thumbnail_id'`) pour tous les articles publiés qui possèdent cette méta-donnée.
