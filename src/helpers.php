@@ -177,3 +177,13 @@ function to_snake_case(string $content): string
 {
     return Str::toSnakeCase($content);
 }
+
+function get_header_submenu_slug(string $label): string
+{
+    return sprintf('header-generated-menu-%s', sanitize_title($label));
+}
+
+function get_header_submenu_name(string $label): string
+{
+    return sprintf('Header - Menu du panneau "%s"', $label);
+}
