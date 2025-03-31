@@ -27,5 +27,9 @@ $classList = [
 
 <img
     class="<?= esc_attr(implode(' ', $classList)) ?>"
-    <?= array_to_html_attributes($args, ['class', 'url']) ?>
+    <?= array_to_html_attributes(
+        $args,
+        ['class', 'url'],
+        ['src', 'alt', 'loading', 'width', 'height', 'style']
+    ) ?>
 />
