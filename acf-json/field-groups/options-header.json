@@ -241,6 +241,122 @@
                                     "prepend": "",
                                     "append": "",
                                     "parent_repeater": "field_67ead909f1fb8"
+                                },
+                                {
+                                    "key": "field_67eae267ffea4",
+                                    "label": "Vignettes de lien de sous-menu",
+                                    "name": "sub-menu-cards",
+                                    "aria-label": "",
+                                    "type": "flexible_content",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layouts": {
+                                        "layout_67eae271b7727": {
+                                            "key": "layout_67eae271b7727",
+                                            "name": "sub-menu-card",
+                                            "label": "Vignette",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_67eae2d2ffea6",
+                                                    "label": "Titre",
+                                                    "name": "title",
+                                                    "aria-label": "",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "50",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "allow_in_bindings": 0,
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": ""
+                                                },
+                                                {
+                                                    "key": "field_67eae2f5ffea8",
+                                                    "label": "Lien",
+                                                    "name": "link",
+                                                    "aria-label": "",
+                                                    "type": "link",
+                                                    "instructions": "",
+                                                    "required": 1,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "50",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "allow_in_bindings": 0
+                                                },
+                                                {
+                                                    "key": "field_67eae2c6ffea5",
+                                                    "label": "Image",
+                                                    "name": "image",
+                                                    "aria-label": "",
+                                                    "type": "image",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "return_format": "array",
+                                                    "library": "all",
+                                                    "min_width": "",
+                                                    "min_height": "",
+                                                    "min_size": "",
+                                                    "max_width": "",
+                                                    "max_height": "",
+                                                    "max_size": "",
+                                                    "mime_types": "",
+                                                    "allow_in_bindings": 0,
+                                                    "preview_size": "medium"
+                                                },
+                                                {
+                                                    "key": "field_67eae2ddffea7",
+                                                    "label": "Extrait",
+                                                    "name": "excerpt",
+                                                    "aria-label": "",
+                                                    "type": "textarea",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "maxlength": "",
+                                                    "allow_in_bindings": 0,
+                                                    "rows": 2,
+                                                    "placeholder": "",
+                                                    "new_lines": ""
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": ""
+                                        }
+                                    },
+                                    "min": 1,
+                                    "max": "",
+                                    "button_label": "Add Row",
+                                    "parent_repeater": "field_67ead909f1fb8"
                                 }
                             ]
                         }
@@ -267,5 +383,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743444476
+    "modified": 1743447045
 }

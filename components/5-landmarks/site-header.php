@@ -24,7 +24,7 @@ if (!empty($additionalClass)) {
             <a
                 class="site-header__logo-link"
                 href="<?php echo esc_url(get_home_url()) ?>"
-                title="<?php echo esc_attr(__("Retourner sur la page principale")) ?>"
+                title="<?php echo esc_attr(__("Retourner sur la page principale", "jrenard")) ?>"
             >
                 <?php atom('image', [
                     'additionalClass' => 'site-header__logo',
@@ -58,18 +58,21 @@ if (!empty($additionalClass)) {
                                         'class' => 'site-header__main-menu-item-button',
                                         'label' => $mainMenuItem['label'] ?? '',
                                     ]) ?>
-                                    <?php /*load_component('layouts/site-header-panel', [
+
+                                    <?php landmark('site-header-panel', [
                                         'additionalClass' => 'site-header__main-menu-item-panel',
                                         'id' => $panelId,
                                         'submenuSlug' => $submenuSlug,
                                         'panel' => $mainMenuItem['panel'] ?? [],
-                                    ])*/ ?>
+                                    ]) ?>
+
                                 <?php else : ?>
                                     <?php atom('link', [
                                         'class' => 'site-header__main-menu-item-link',
                                         'label' => $mainMenuItem['label'] ?? '',
                                         'href' => $mainMenuItem['link']
                                     ]) ?>
+
                                 <?php endif; ?>
 
                             </li>
