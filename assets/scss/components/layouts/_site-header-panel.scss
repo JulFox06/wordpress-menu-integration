@@ -98,6 +98,14 @@
           grid-column: 2 / 4;
         }
       }
+
+      #{$this}__section {
+        display: none;
+
+        &.is-active {
+          display: block;
+        }
+      }
     }
   }
 
@@ -174,6 +182,10 @@
     --button-icon: var(--icon-arrow-right);
 
     width: 100%;
+
+    &.is-active {
+      --button-color: #{color.$blue-endeavour};
+    }
   }
 
   &__sections {

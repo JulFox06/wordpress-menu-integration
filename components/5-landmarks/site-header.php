@@ -57,7 +57,7 @@ $mainMenu = get_field('header_main_menu', 'options') ?: [];
                                     <?php atom('button', [
                                         'class' => 'site-header__main-menu-item-button',
                                         'label' => $mainMenuItem['label'] ?? '',
-                                        'data-panel-target' => $panelId,
+                                        'data-section-panel-target' => $panelId,
                                     ]) ?>
 
                                     <?php landmark('site-header-panel', [
