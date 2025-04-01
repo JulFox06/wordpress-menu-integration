@@ -1,1 +1,45 @@
+@charset "utf-8"; // This should stay as the very first line of the file.
+
 // # Main entry point
+
+// ## Variables, mixins, functions, …
+// - This file should be automatically imported before every scss file when using Webpack
+//   See https://github.com/webpack-contrib/sass-loader#prependdata
+// - You can do the same in Vue Single File Components (SFC) with Vue CLI
+//   See https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders
+// - If you can't import it automatically in every file, uncomment the following line
+// @use "lib";
+
+// ## Modern Normalize
+// https://github.com/sindresorhus/modern-normalize/blob/main/modern-normalize.css
+@use "modern-normalize";
+
+// ## Font-faces
+@use "font-faces";
+
+// ## Custom Properties
+@use "custom-properties/gui-color";
+@use "custom-properties/gui-font";
+@use "custom-properties/gui-icon";
+@use "custom-properties/gui-spacing";
+@use "custom-properties/theme-common";
+
+// Reset styles
+@use "resets/base-reset";
+@use "resets/wordpress-reset";
+@use "resets/text-reset";
+@use "resets/media-reset";
+@use "resets/interactive-reset";
+@use "resets/input-reset";
+
+// ## Vendors
+// @use "vendors/example-vendor-styles";
+
+// ## Components
+// @use "components/component-name";
+@use "components/cards/card-sub-menu";
+@use "components/icon";
+@use "components/sr-only";
+
+// ## Print
+@use "print";

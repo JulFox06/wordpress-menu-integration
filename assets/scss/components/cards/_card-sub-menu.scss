@@ -1,0 +1,58 @@
+@use "../../lib/functions/px-to-rem" as *;
+@use "../../lib/variables/color";
+@use "../../lib/variables/font";
+
+.card-sub-menu {
+  $this: &;
+
+  --card-color: #{color.$grey-bright};
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: px-to-rem(10px);
+  max-width: px-to-rem(230px);
+
+  &:hover {
+    --card-color: #{color.$blue-endeavour};
+  }
+
+  &__thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 230 / 100;
+    background-color: color.$white;
+  }
+
+  &__thumbnail {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: px-to-rem(16px);
+    line-height: 1;
+    font-weight: font.$weight-black;
+    color: var(--card-color);
+    margin: 0;
+    transition: color ease 0.3s;
+  }
+
+  &__excerpt {
+    font-size: px-to-rem(12px);
+    line-height: px-to-rem(20px);
+    font-weight: font.$weight-light;
+    color: var(--card-color);
+    margin: 0;
+    transition: color ease 0.3s;
+  }
+}

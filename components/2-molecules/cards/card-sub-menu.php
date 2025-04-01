@@ -30,7 +30,7 @@ $excerpt = $args['excerpt'] ?? '';
 
     <?php if (!empty($title)) : ?>
         <?php atom('paragraph', [
-            'class' => 'card-sub-menu__excerpt',
+            'class' => 'card-sub-menu__title',
             'content' => $title,
         ]) ?>
     <?php endif; ?>
