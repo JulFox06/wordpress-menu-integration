@@ -28,17 +28,25 @@
     @extend %icon;
   }
 
-  // &--example::before {
-  //   @extend %icon--example;
-  // }
+  &--arrow-down::before {
+    @extend %icon--arrow-down;
+  }
+
+  &--arrow-right::before {
+    @extend %icon--arrow-right;
+  }
+
+  &--arrow-left::before {
+    @extend %icon--arrow-left;
+  }
+
+  &--arrow-up::before {
+    @extend %icon--arrow-up;
+  }
 }
 
 .icon-after {
   &::after {
     @extend %icon;
   }
-
-  // &--example::after {
-  //   @extend %icon--example;
-  // }
 }

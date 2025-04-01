@@ -55,9 +55,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-%icon--arrow-right {
-  content: "\73";
+%icon--arrow-down {
+  content: "\61";
 }
+%icon--arrow-right {
+  content: "\62";
+}
+%icon--arrow-left {
+  content: "\63";
+}
+%icon--arrow-up {
+  content: "\64";
+}
+
 //
 // Or, the better solution (when using the scss/custom-properties/_gui-icon.scss) :
 //
