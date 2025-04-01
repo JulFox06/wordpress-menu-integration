@@ -148,6 +148,11 @@
 
   &__section-nav-list-item {
     width: 100%;
+    border-bottom: px-to-rem(1px) solid color.$blue-spindle;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
   }
 
   &__section-list-item-button {
