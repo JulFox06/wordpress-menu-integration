@@ -17,7 +17,8 @@
   position: fixed;
   z-index: z-index.$site-header;
   top: calc(
-    env(safe-area-inset-top, 0px) + var(--wordpress-admin-bar-height, 0px)
+    env(safe-area-inset-top, 0px) + var(--wordpress-admin-bar-height, 0px) +
+      var(--site-pre-header-height)
   );
   left: env(safe-area-inset-left, 0px);
   width: calc(
@@ -279,8 +280,6 @@
     @extend %button;
     @extend %theme-button;
     @extend %theme-button--primary;
-    // @extend %theme-button--with-icon;
-    // @extend %theme-button--with-icon-justify-content-on-mobile;
 
     width: 100%;
     justify-content: center;

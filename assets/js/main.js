@@ -9,7 +9,7 @@ import '../scss/main.scss';
 import './helpers.js';
 
 // Component imports
-import ExampleComponent from './components/ExampleComponent.js';
+import SiteHeader from './components/Layouts/SiteHeader.js';
 
 // # ----------------------------------------------------------------------------------------- #
 // # Fill the array with the components needed right after the page fully loaded
@@ -17,7 +17,7 @@ import ExampleComponent from './components/ExampleComponent.js';
 const componentsOnLoad = () => {
   [
     // For exemple : header behavior, form validation, swiper generation, etc.
-    new ExampleComponent(),
+    new SiteHeader(),
   ].forEach((component) => component.init());
 };
 
