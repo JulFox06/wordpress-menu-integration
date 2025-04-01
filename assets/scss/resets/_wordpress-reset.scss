@@ -43,10 +43,9 @@ body {
 
   &.admin-bar {
     --wordpress-admin-bar-height: var(--wp-admin--admin-bar--height, 0px);
-
-    // Set the padding-top to the height of the admin bar
-    padding-top: var(--wordpress-admin-bar-height);
   }
+
+  padding-top: var(--site-header-full-height);
 
   // Override the admin bar to be fixed on top of the page
   #wpadminbar {

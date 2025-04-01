@@ -1,0 +1,160 @@
+@use "../../lib/functions/px-to-rem" as *;
+@use "../../lib/functions/px-to-em" as *;
+@use "../../lib/placeholders/button" as *;
+@use "../../lib/placeholders/buttons/theme-button" as *;
+@use "../../lib/placeholders/links/theme-link" as *;
+@use "../../lib/placeholders/heading" as *;
+@use "../../lib/placeholders/icon" as *;
+@use "../../lib/mixins/breakpoint" as *;
+@use "../../lib/variables/breakpoint";
+@use "../../lib/variables/color";
+@use "../../lib/variables/font";
+@use "../../lib/variables/transition";
+
+.site-header-panel {
+  $this: &;
+
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transform-origin: top center;
+  transform: translateY(0) scale(1) rotateZ(0deg);
+  transition-property: opacity, transform;
+  transition-duration: transition.$duration-medium;
+  transition-timing-function: transition.$timing-function-default;
+  display: flex;
+  min-height: 100%;
+
+  @include breakpoint(breakpoint.$header-panel-visibility) {
+    left: 0;
+    top: 100%;
+    padding-top: px-to-rem(10px);
+    transform: translateY(25%) rotateZ(0deg);
+  }
+
+  &:hover {
+    z-index: 4;
+
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      opacity: 1;
+      pointer-events: all;
+      transform: rotateZ(0deg);
+    }
+  }
+
+  &:focus-within {
+    z-index: 3;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0) translateX(0) scale(1) rotateZ(0deg);
+
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      transform: rotateZ(0deg);
+    }
+  }
+
+  &.is-active {
+    @include breakpoint(
+      breakpoint.$header-panel-visibility + px-to-rem(1px),
+      max-width
+    ) {
+      z-index: 3;
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0) translateX(-100%) scale(1) rotateZ(0deg);
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-height: calc(100dvh - var(--site-header-full-height));
+    background-color: color.$white;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 0 0
+      var(
+        --site-header-panel-bottom-right-border-radius,
+        var(--site-header-border-radius)
+      )
+      var(
+        --site-header-panel-bottom-left-border-radius,
+        var(--site-header-border-radius)
+      );
+    padding: 0 0 var(--wrapper-padding-horizontal) 0;
+    box-shadow: 0 px-to-rem(3px) px-to-rem(6px) px-to-rem(-3px)
+      rgba(color.$black, 0.1);
+
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      max-height: calc(
+        100dvh - var(--site-header-full-height) - #{px-to-rem(10px)}
+      );
+      min-height: px-to-rem(400px);
+      box-shadow: var(--site-header-box-shadow);
+      padding: px-to-rem(30px);
+      display: grid;
+      grid-template-columns: repeat(22, 1fr);
+      gap: px-to-em(20px);
+      overflow-x: hidden;
+      border-radius: var(
+          --site-header-panel-top-left-border-radius,
+          var(--site-header-border-radius)
+        )
+        var(
+          --site-header-panel-top-right-border-radius,
+          var(--site-header-border-radius)
+        )
+        var(
+          --site-header-panel-bottom-right-border-radius,
+          var(--site-header-border-radius)
+        )
+        var(
+          --site-header-panel-bottom-left-border-radius,
+          var(--site-header-border-radius)
+        );
+    }
+  }
+
+  &__content {
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__close-button {
+    --interactive-outline-offset: #{px-to-rem(-3px)};
+    --button-background-color: #{color.$white};
+    --button-background-color-hover: #{color.$blue-endeavour};
+    --button-color: #{color.$blue-endeavour};
+    --button-color-hover: #{color.$white};
+    --button-justify-content: flex-start;
+
+    padding: px-to-rem(25px) var(--wrapper-padding-horizontal);
+    width: 100%;
+    display: flex;
+    gap: px-to-rem(10px);
+
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      display: none;
+    }
+
+    &::before {
+      @extend %icon;
+      @extend %icon--arrow-right;
+
+      font-size: px-to-rem(14px);
+      height: px-to-rem(14px);
+      width: px-to-rem(14px);
+      transform: rotateZ(180deg);
+      transform-origin: center;
+    }
+  }
+
+  &__close-button-inner {
+    font-weight: font.$weight-bold;
+  }
+}
