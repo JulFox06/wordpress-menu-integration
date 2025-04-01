@@ -33,28 +33,13 @@
 
   &.is-fixed {
     #{$block}__wrapper {
-      box-shadow: var(--site-header-box-shadow);
       background-color: var(--site-header-background-color);
     }
   }
 
   &.has-burger-menu-active {
-    --site-header-bottom-right-border-radius: 0px;
-    --site-header-bottom-left-border-radius: 0px;
-
-    @include breakpoint(breakpoint.$header-side-menu) {
-      --site-header-bottom-left-border-radius: var(--site-header-border-radius);
-    }
-
-    @include breakpoint(breakpoint.$header-panel-visibility) {
-      --site-header-bottom-right-border-radius: var(
-        --site-header-border-radius
-      );
-    }
-
     #{$block}__wrapper {
       background-color: var(--site-header-background-color);
-      box-shadow: var(--site-header-box-shadow);
     }
 
     #{$block}__main-menu-wrapper {
@@ -64,17 +49,6 @@
 
       @include breakpoint(breakpoint.$header-panel-visibility) {
         transform: none;
-      }
-    }
-
-    #{$block}__main-menu-wrapper,
-    #{$block}__main-menu-scroller {
-      border-radius: 0 0 var(--site-header-border-radius)
-        var(--site-header-border-radius);
-
-      @include breakpoint(breakpoint.$header-panel-visibility) {
-        border: 0;
-        border-radius: 0;
       }
     }
   }
@@ -92,9 +66,9 @@
     @extend %wrapper;
 
     --wrapper-padding-left: #{px-to-rem(10px)};
-    --wrapper-padding-right: #{px-to-rem(15px * 0.5)};
+    --wrapper-padding-right: #{px-to-rem(10px)};
 
-    transition-property: border-radius, background-color, box-shadow;
+    transition-property: border-radius, background-color;
     transition-duration: transition.$duration-medium;
     transition-timing-function: transition.$timing-function-default;
     position: relative;
@@ -107,12 +81,12 @@
     background-color: var(--site-header-background-color);
 
     @include breakpoint(breakpoint.$tablet) {
-      gap: px-to-rem(20px);
+      gap: px-to-rem(30px);
     }
 
     @include breakpoint(breakpoint.$desktop) {
-      --wrapper-padding-left: #{px-to-rem(20px)};
-      --wrapper-padding-right: #{px-to-rem(20px)};
+      --wrapper-padding-left: #{px-to-rem(40px)};
+      --wrapper-padding-right: #{px-to-rem(40px)};
     }
   }
 
@@ -139,7 +113,7 @@
     width: auto;
     height: 100%;
     max-width: 100%;
-    max-height: px-to-rem(47px);
+    max-height: px-to-rem(70px);
   }
 
   &__burger-button {
@@ -153,12 +127,6 @@
     --button-padding-left: #{px-to-rem(5px)};
     --button-width: #{px-to-rem(50px)};
     --button-height: #{px-to-rem(50px)};
-    --button-border-radius: 50%;
-    --button-color-hover: var(--theme-button-primary-color);
-    --button-background-color-hover: var(
-      --theme-button-primary-background-color
-    );
-    --button-border-color-hover: var(--theme-button-primary-border-color);
 
     flex-shrink: 0;
     position: relative;
@@ -253,8 +221,6 @@
     opacity: 0;
     pointer-events: none;
     border-top: 1px solid color.$white-catskill;
-    box-shadow: var(--site-header-box-shadow);
-    border-radius: var(--site-header-border-radius);
     transition-property: border-radius, transform, opacity;
     transition-duration: transition.$duration-medium;
     transition-timing-function: transition.$timing-function-default;
@@ -266,7 +232,6 @@
     }
 
     @include breakpoint(breakpoint.$header-panel-visibility) {
-      box-shadow: none;
       position: static;
       flex-direction: row;
       flex: 1;
@@ -290,7 +255,6 @@
     flex-direction: column;
     overflow-y: auto;
     max-height: calc(100dvh - var(--site-header-full-height));
-    border-radius: var(--site-header-border-radius);
     transition-property: border-radius;
     transition-duration: transition.$duration-medium;
     transition-timing-function: transition.$timing-function-default;
@@ -299,7 +263,6 @@
       flex-direction: row;
       flex: 1;
       max-height: none;
-      border-radius: 0;
     }
   }
 
@@ -339,8 +302,6 @@
     flex-direction: column;
     width: 100%;
     background-color: color.$white;
-    border-radius: 0 0 var(--site-header-border-radius)
-      var(--site-header-border-radius);
 
     @include breakpoint(breakpoint.$header-panel-visibility) {
       padding-top: 0;
@@ -353,7 +314,6 @@
       transform: none;
       border-top: none;
       background-color: transparent;
-      border-radius: 0;
     }
   }
 
@@ -384,17 +344,9 @@
 
       #{$block}__main-menu-item-button {
         --button-color: #{color.$grey-bright};
-        --button-color-hover: #{color.$grey-bright};
+        --button-color-hover: #{color.$blue-endeavour};
         --button-background-color: #{color.$white};
         --button-background-color-hover: #{color.$white};
-      }
-
-      #{$block}__main-menu-item-button-icon {
-        &::before {
-          @include breakpoint(breakpoint.$header-panel-visibility) {
-            transform: rotateZ(-90deg);
-          }
-        }
       }
     }
   }
@@ -409,73 +361,37 @@
     @extend %button;
 
     --button-justify-content: space-between;
-    --button-font-weight: #{font.$weight-bold};
+    --button-font-size: #{px-to-rem(11px)};
+    --button-font-weight: #{font.$weight-extra-bold};
     --button-color: #{color.$grey-bright};
     --button-color-hover: #{color.$blue-endeavour};
+    --button-background-color: #{color.$white};
+    --button-border-width: 0;
     --button-padding-top: #{px-to-rem(15px)};
     --button-padding-right: #{px-to-rem(15px)};
     --button-padding-bottom: #{px-to-rem(15px)};
     --button-padding-left: #{px-to-rem(15px)};
     --button-padding-horizontal: var(--wrapper-padding-horizontal);
-    --button-border-radius: #{px-to-rem(5px)};
+    --button-text-transform: uppercase;
     --interactive-outline-offset: #{px-to-rem(-3px)};
 
     width: 100%;
 
     @include breakpoint(breakpoint.$header-panel-visibility) {
-      --button-padding-left: #{px-to-rem(20px)};
-      --button-padding-right: #{px-to-rem(20px)};
       --button-padding-horizontal: #{px-to-rem(15px)};
-      --button-color: #{color.$grey-bright};
-      --button-color-hover: #{color.$blue-endeavour};
       --button-justify-content: center;
 
       width: auto;
-    }
-
-    @include breakpoint(px-to-rem(1600px)) {
-      --button-padding-left: #{px-to-rem(25px)};
-      --button-padding-right: #{px-to-rem(25px)};
     }
   }
 
   &__main-menu-item-link {
     --interactive-outline-offset: #{px-to-rem(-3px)};
-
-    text-decoration: underline;
   }
 
   &__main-menu-item-button {
     gap: px-to-rem(5px);
     display: flex;
     align-items: center;
-  }
-
-  &__main-menu-item-button-icon {
-    --main-menu-item-button-icon: #{px-to-rem(14px)};
-
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--main-menu-item-button-icon);
-    height: var(--main-menu-item-button-icon);
-
-    &::before {
-      @extend %icon;
-      @extend %icon--arrow-right;
-
-      font-size: var(--main-menu-item-button-icon);
-
-      @include breakpoint(breakpoint.$header-panel-visibility) {
-        content: "\6c";
-        transition-property: transform;
-        transition-duration: transition.$duration-medium;
-        transition-timing-function: transition.$timing-function-default;
-        position: absolute;
-        transform: rotateZ(90deg);
-        transform-origin: center;
-      }
-    }
   }
 }

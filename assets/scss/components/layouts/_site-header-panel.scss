@@ -33,7 +33,6 @@
   @include breakpoint(breakpoint.$header-panel-visibility) {
     left: 0;
     top: 100%;
-    padding-top: px-to-rem(10px);
     transform: translateY(25%) rotateZ(0deg);
   }
 
@@ -73,55 +72,32 @@
   &__wrapper {
     width: 100%;
     max-height: calc(100dvh - var(--site-header-full-height));
-    background-color: color.$white;
+    background-color: color.$white-catskill;
     overflow-y: auto;
     overscroll-behavior: contain;
-    border-radius: 0 0
-      var(
-        --site-header-panel-bottom-right-border-radius,
-        var(--site-header-border-radius)
-      )
-      var(
-        --site-header-panel-bottom-left-border-radius,
-        var(--site-header-border-radius)
-      );
     padding: 0 0 var(--wrapper-padding-horizontal) 0;
-    box-shadow: 0 px-to-rem(3px) px-to-rem(6px) px-to-rem(-3px)
-      rgba(color.$black, 0.1);
 
     @include breakpoint(breakpoint.$header-panel-visibility) {
       max-height: calc(
         100dvh - var(--site-header-full-height) - #{px-to-rem(10px)}
       );
-      min-height: px-to-rem(400px);
-      box-shadow: var(--site-header-box-shadow);
-      padding: px-to-rem(30px);
-      display: grid;
-      grid-template-columns: repeat(22, 1fr);
-      gap: px-to-em(20px);
+      min-height: px-to-rem(230px);
+      padding: px-to-rem(80px) px-to-rem(150px);
       overflow-x: hidden;
-      border-radius: var(
-          --site-header-panel-top-left-border-radius,
-          var(--site-header-border-radius)
-        )
-        var(
-          --site-header-panel-top-right-border-radius,
-          var(--site-header-border-radius)
-        )
-        var(
-          --site-header-panel-bottom-right-border-radius,
-          var(--site-header-border-radius)
-        )
-        var(
-          --site-header-panel-bottom-left-border-radius,
-          var(--site-header-border-radius)
-        );
     }
   }
 
   &__content {
-    @include breakpoint(breakpoint.$header-panel-visibility) {
-      grid-column: 1 / 6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: px-to-em(70px);
+
+    &--multiple {
+      #{$this}__sections {
+        @include breakpoint(breakpoint.$header-panel-visibility) {
+          grid-column: 2 / 4;
+        }
+      }
     }
   }
 
@@ -156,5 +132,76 @@
 
   &__close-button-inner {
     font-weight: font.$weight-bold;
+  }
+
+  &__sections-nav {
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__section-nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__section-nav-list-item {
+    width: 100%;
+  }
+
+  &__section-list-item-button {
+    @extend %button;
+    @extend %theme-button;
+    @extend %theme-button--icon-after;
+
+    --button-font-size: #{px-to-rem(20px)};
+    --button-font-weight: #{font.$weight-extra-bold};
+    --button-text-transform: uppercase;
+    --button-border-width: 0;
+    --button-color: #{color.$grey-bright};
+    --button-color-hover: #{color.$blue-endeavour};
+    --button-background-color: #{color.$white-catskill};
+    --button-background-color-hover: #{color.$white-catskill};
+    --button-justify-content: space-between;
+    --button-padding-block: #{px-to-rem(20px)};
+    --button-padding-inline: 0;
+    --button-icon: var(--icon-arrow-right);
+
+    width: 100%;
+  }
+
+  &__sections {
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__section {
+    display: block;
+    width: 100%;
+  }
+
+  &__section-list {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: px-to-rem(30px);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include breakpoint(breakpoint.$header-panel-visibility) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: px-to-em(30px);
+    }
+  }
+
+  &__section-list-item {
+    //
   }
 }

@@ -9,11 +9,12 @@
 
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: px-to-rem(10px);
   max-width: px-to-rem(230px);
+  width: 100%;
 
   &:hover {
     --card-color: #{color.$blue-endeavour};

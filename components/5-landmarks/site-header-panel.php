@@ -12,6 +12,7 @@ $panel = $args['panel'] ?? [];
 $panelTitle = $args['panelTitle'] ?? __('Fermer le panneau', "jrenard");
 
 $panelSections = $panel['panel_sections'] ?? [];
+$isMultiplePanelSection = (count($panelSections) > 1);
 
 ?>
 
@@ -31,8 +32,8 @@ $panelSections = $panel['panel_sections'] ?? [];
                 </span>
             </button>
 
-            <div class="site-header-panel__content">
-                <?php if (count($panelSections) > 1) : ?>
+            <div class="site-header-panel__content<?= ($isMultiplePanelSection) ? ' site-header-panel__content--multiple' : ''?>">
+                <?php if ($isMultiplePanelSection) : ?>
                 <div class="site-header-panel__sections-nav">
                     <ul class="site-header-panel__section-nav-list">
                         <?php foreach ($panelSections as $panelSection) :
@@ -62,7 +63,7 @@ $panelSections = $panel['panel_sections'] ?? [];
                             <?php if (!empty($panelSectionCards)) : ?>
                                 <ul class="site-header-panel__section-list">
                                     <?php foreach ($panelSectionCards as $panelSectionCard) : ?>
-                                        <li class="site-header-panel__section-list">
+                                        <li class="site-header-panel__section-list-item">
                                             <?php molecule('cards/card-sub-menu', [
                                                 'class' => 'site-header-panel__section-card-sub-menu',
                                                 ...$panelSectionCard,
@@ -74,6 +75,7 @@ $panelSections = $panel['panel_sections'] ?? [];
                         </div>
                     <?php endforeach; ?>
                 </div>
+
             </div>
 
         </div>
