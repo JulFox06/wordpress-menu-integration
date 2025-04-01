@@ -33,9 +33,10 @@
   --interactive-outline-width-focus-visible: #{px-to-rem(3px)};
 
   // Customize all theme button variables applying the following example.
-  --button-font-weight: #{font.$weight-bold};
-  --button-min-height: #{px-to-rem(50px)};
-  --button-border-radius: calc(var(--button-min-height) * 0.5);
+  --button-font-size: #{px-to-rem(12px)};
+  --button-font-weight: #{font.$weight-extra-bold};
+  --button-min-height: #{px-to-rem(48px)};
+  --button-text-transform: uppercase;
 
   // --------------------------------------------------
   // Primary
@@ -44,55 +45,28 @@
   &--primary {
     // Default visual
     --button-color: #{color.$white};
-    --button-background-color: #{color.$blue-dark};
-    --button-border-color: #{color.$blue-dark};
+    --button-background-color: #{color.$blue-endeavour};
+    --button-border-color: #{color.$blue-endeavour};
 
     // Hovered visual
     --button-color-hover: #{color.$white};
-    --button-background-color-hover: #{color.$blue};
-    --button-border-color-hover: #{color.$blue};
+    --button-background-color-hover: #{color.$blue-congress};
+    --button-border-color-hover: #{color.$blue-congress};
 
     // Focused visual
-    --button-color-focus-visible: #{color.$blue};
+    --button-color-focus-visible: #{color.$blue-congress};
     --button-background-color-focus-visible: #{color.$white};
     --button-border-color-focus-visible: #{color.$white};
 
     // Focused and hovered visual
-    --button-color-hover-focus-visible: #{color.$blue-dark};
-    --button-background-color-hover-focus-visible: #{color.$blue-light};
+    --button-color-hover-focus-visible: #{color.$blue-congress};
+    --button-background-color-hover-focus-visible: #{color.$white};
     --button-border-color-hover-focus-visible: #{color.$white};
 
     // Active visual
-    --button-color-active: #{color.$blue};
-    --button-background-color-active: #{color.$white};
-    --button-border-color-active: #{color.$blue};
-  }
-
-  &--primary-outline {
-    // Default visual
-    --button-color: #{color.$blue};
-    --button-background-color: #{color.$white};
-    --button-border-color: #{color.$blue};
-
-    // Hovered visual
-    --button-color-hover: #{color.$white};
-    --button-background-color-hover: #{color.$blue};
-    --button-border-color-hover: #{color.$blue};
-
-    // Focused visual
-    --button-color-focus-visible: #{color.$blue};
-    --button-background-color-focus-visible: #{color.$white};
-    --button-border-color-focus-visible: #{color.$white};
-
-    // Focused and hovered visual
-    --button-color-hover-focus-visible: #{color.$blue};
-    --button-background-color-hover-focus-visible: #{color.$blue};
-    --button-border-color-hover-focus-visible: #{color.$white};
-
-    // Active visual
-    --button-color-active: #{color.$blue};
-    --button-background-color-active: #{color.$white};
-    --button-border-color-active: #{color.$blue};
+    --button-color-active: #{color.$white};
+    --button-background-color-active: #{color.$blue-congress};
+    --button-border-color-active: #{color.$blue-congress};
   }
 
   // --------------------------------------------------
