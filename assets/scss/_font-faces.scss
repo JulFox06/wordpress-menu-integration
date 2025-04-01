@@ -1,0 +1,220 @@
+// # Font-faces
+
+@use "lib/variables/font";
+
+// This file only contains font faces and is included once at the beginning
+// of the main entry file.
+//
+// ```
+// @font-face {
+//   font-family: font.$name-example;
+//   src: local(font.$name-example),
+//     url("../fonts/example-font.woff2") format("woff2");
+//   font-weight: map-get(font.$weights, medium);
+//   font-style: normal;
+//   font-display: swap;
+//   unicode-range: $font-face-unicode-range;
+// }
+// ```
+
+$font-face-unicode-range: "U+000-5FF"; // Latin glyphs
+
+// Add custom fonts below :
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-BlackItalic.woff2") format("woff2");
+  font-weight: font.$weight-black;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Black.woff2") format("woff2");
+  font-weight: font.$weight-black;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-ExtraBold.woff2") format("woff2");
+  font-weight: font.$weight-extra-bold;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-ExtraLight.woff2") format("woff2");
+  font-weight: font.$weight-extra-light;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Bold.woff2") format("woff2");
+  font-weight: font.$weight-bold;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: font.$weight-extra-bold;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-BoldItalic.woff2") format("woff2");
+  font-weight: font.$weight-bold;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Italic.woff2") format("woff2");
+  font-weight: font.$weight-regular;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-ExtraLightItalic.woff2") format("woff2");
+  font-weight: font.$weight-extra-light;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Light.woff2") format("woff2");
+  font-weight: font.$weight-light;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-LightItalic.woff2") format("woff2");
+  font-weight: font.$weight-light;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-MediumItalic.woff2") format("woff2");
+  font-weight: font.$weight-medium;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Medium.woff2") format("woff2");
+  font-weight: font.$weight-medium;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Thin.woff2") format("woff2");
+  font-weight: font.$weight-thin;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-SemiBoldItalic.woff2") format("woff2");
+  font-weight: font.$weight-semi-bold;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-SemiBold.woff2") format("woff2");
+  font-weight: font.$weight-semi-bold;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-Regular.woff2") format("woff2");
+  font-weight: font.$weight-regular;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
+  font-family: font.$name-monserrat;
+  src:
+    local(font.$name-monserrat),
+    url("../fonts/Monserrat/Montserrat-ThinItalic.woff2") format("woff2");
+  font-weight: font.$weight-thin;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
