@@ -17,6 +17,7 @@
 // Like so, the font is called as `font-family: font.$name-{name};`
 // $name-example: "Example";
 $name-monserrat: "Monserrat";
+$name-icons: "republic-groupe";
 $name-system: system-ui;
 
 // ## Font families
@@ -25,10 +26,7 @@ $name-system: system-ui;
 // $family-example: $name-example, Arial, sans-serif;
 $family-monserrat: $name-monserrat, Arial, sans-serif;
 $family-system: $name-system, sans-serif;
-$family-icons: sans-serif; // Replace with the font-family of your icon font
-
-// Example of custom font-family
-// $family-example: $name-example, Arial, sans-serif;
+$family-icons: $name-icons, sans-serif; // Replace with the font-family of your icon font
 
 // Used for functions font-size based and html root element
 // /!\ Must stay as px, it is not a relative font-size and it is used as reference in functions
