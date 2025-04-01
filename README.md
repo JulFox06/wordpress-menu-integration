@@ -52,3 +52,13 @@ Pour accéder à l'interface d'administration de WordPress, utilisez les identif
 - **Corriger les erreurs PHPCS :**  
   `composer run-script phpcs:fix`
 
+## Consignes d'intégration
+
+Le méga menu s'intégre depuis une page d'options disponible en back-office. Quelques assets sont présents dans le dossier `_INTEGRATION` de ce dépôt.
+
+- rendez-vous donc sur ce lien : http://localhost:8888/wp-admin/admin.php?page=options-header
+- remplissez les différents champs, à commencer par la section "Général".
+- remplissez ensuite la section "Menu". Il s'agit ici de champs répéteurs ACF :
+  - en ajoutant un élément, vous aurez la possibilité de définir s'il s'agit d'un lien ou non. Si ce n'est pas un lien, c'est alors un mega-menu.
+  - pour les méga-menus, une section est obligatoire (une seule ne définit qu'un deuxième niveau, plusieurs sections permet alors de faire trois niveaux de menu).
+  - pour chaque section, vous pouvez ajouter autant de vignette que nécessaire (avec la possibilité de mettre une image, un titre, un lien et un extrait).
