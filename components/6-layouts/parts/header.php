@@ -10,6 +10,8 @@
 
         <?php wp_body_open() ?>
 
+        <?php landmark('site-pre-header') ?>
+
         <?php landmark('site-header') ?>
 
         <?php // Ends in footer.php
