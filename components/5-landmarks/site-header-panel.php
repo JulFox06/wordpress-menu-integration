@@ -1,49 +1,79 @@
 <?php
 
-$baseClass = 'site-header-panel';
-$blockClass = [$baseClass];
+$classList = [
+    'site-header-panel',
+    $args['class'] ?? '',
+];
 
-$additionalClass = $args['additionalClass'] ?? '';
-$additionalClass = is_array($additionalClass) ? implode(' ', $additionalClass) : $additionalClass;
-
-$panel = $args['panel'] ?? [];
 $submenuSlug = $args['submenuSlug'] ?? '';
 $id = $args['id'] ?? '';
 
-$hasWidgets = !empty($panel['flexible']) && is_array($panel['flexible']) && count($panel['flexible']);
+$panel = $args['panel'] ?? [];
+$panelTitle = $args['panelTitle'] ?? __('Fermer le panneau', "jrenard");
 
-if (!$hasWidgets) {
-    $blockClass[] = $baseClass . '--no-widget';
-} else {
-    $blockClass[] = $baseClass . '--widget-count-' . count($panel['flexible']);
-}
-
-if (!empty($additionalClass)) {
-    $blockClass[] = $additionalClass;
-}
+$panelSections = $panel['panel_sections'] ?? [];
 
 ?>
 
-<?php if (!empty($panel)) : ?>
+<?php if (!empty($panel) && !empty($panelSections)) : ?>
     <div
-        class="<?php echo esc_attr(implode(' ', $blockClass)) ?>"
-        <?php echo !empty($id) ? sprintf('id="%s"', esc_attr($id)) : '' ?>
+        class="<?= esc_attr(implode(' ', $classList)) ?>"
+        <?= !empty($id) ? sprintf('id="%s"', esc_attr($id)) : '' ?>
     >
         <div class="site-header-panel__wrapper">
             <button
                 class="site-header-panel__close-button"
-                title="<?php echo esc_attr(__('Fermer le panneau', "jrenard")) ?> '<?php echo esc_attr($panel['title'] ?? '') ?>'"
+                title="<?= esc_attr(__('Fermer le panneau', "jrenard")) ?> '<?= esc_attr($panelTitle) ?>'"
                 data-panel-target="<?php echo esc_attr($id) ?>"
             >
                 <span class="site-header-panel__close-button-inner">
-                    <?php echo esc_html($panel['title'] ?? __('Fermer le panneau', "jrenard")) ?>
+                    <?= esc_html('< ' . $panelTitle) ?>
                 </span>
             </button>
 
             <div class="site-header-panel__content">
+                <?php if (count($panelSections) > 1) : ?>
+                <div class="site-header-panel__sections-nav">
+                    <ul class="site-header-panel__section-nav-list">
+                        <?php foreach ($panelSections as $panelSection) :
+                            $panelSectionSlug = to_kebab_case($id . ' ' . $panelSection['button_label']);
+                            ?>
+                            <li class="site-header-panel__section-nav-list-item">
+                                <?php atom('button', [
+                                    'class' => 'site-header-panel__section-list-item-button',
+                                    'label' => $panelSection['button_label'] ?? '',
+                                    'data-panel-section-target' => $panelSectionSlug,
+                                ]) ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
 
-                <?php // TODO : sub menu content here ?>
-
+                <div class="site-header-panel__sections">
+                    <?php foreach ($panelSections as $panelSection) :
+                        $panelSectionSlug = to_kebab_case($id . ' ' . $panelSection['button_label']);
+                        $panelSectionCards = $panelSection['sub-menu-cards'] ?? [];
+                        ?>
+                        <div
+                            class="site-header-panel__section"
+                            id="<?= $panelSectionSlug ?>"
+                        >
+                            <?php if (!empty($panelSectionCards)) : ?>
+                                <ul class="site-header-panel__section-list">
+                                    <?php foreach ($panelSectionCards as $panelSectionCard) : ?>
+                                        <li class="site-header-panel__section-list">
+                                            <?php molecule('cards/card-sub-menu', [
+                                                'class' => 'site-header-panel__section-card-sub-menu',
+                                                ...$panelSectionCard,
+                                            ]) ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
 
         </div>

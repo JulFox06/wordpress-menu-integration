@@ -23,8 +23,8 @@ if (!empty($additionalClass)) {
         <?php if (is_array($mainLogo) && !empty($mainLogo['url'])) : ?>
             <a
                 class="site-header__logo-link"
-                href="<?php echo esc_url(get_home_url()) ?>"
-                title="<?php echo esc_attr(__("Retourner sur la page principale", "jrenard")) ?>"
+                href="<?= esc_url(get_home_url()) ?>"
+                title="<?= esc_attr(__("Retourner sur la page principale", "jrenard")) ?>"
             >
                 <?php atom('image', [
                     'additionalClass' => 'site-header__logo',
@@ -33,7 +33,7 @@ if (!empty($additionalClass)) {
             </a>
         <?php endif; ?>
 
-        <button class="site-header__burger-button" type="button" title="<?php echo esc_attr(__('Ouvrir ou fermer le menu principal')) ?>">
+        <button class="site-header__burger-button" type="button" title="<?= esc_attr(__('Ouvrir ou fermer le menu principal')) ?>">
             <span class="site-header__burger-button-trace site-header__burger-button-trace--top"></span>
             <span class="site-header__burger-button-trace site-header__burger-button-trace--middle"></span>
             <span class="site-header__burger-button-trace site-header__burger-button-trace--bottom"></span>
@@ -57,13 +57,15 @@ if (!empty($additionalClass)) {
                                     <?php atom('button', [
                                         'class' => 'site-header__main-menu-item-button',
                                         'label' => $mainMenuItem['label'] ?? '',
+                                        'data-panel-target' => $panelId,
                                     ]) ?>
 
                                     <?php landmark('site-header-panel', [
-                                        'additionalClass' => 'site-header__main-menu-item-panel',
+                                        'class' => 'site-header__main-menu-item-panel',
                                         'id' => $panelId,
                                         'submenuSlug' => $submenuSlug,
                                         'panel' => $mainMenuItem['panel'] ?? [],
+                                        'panelTitle' => $mainMenuItem['label'],
                                     ]) ?>
 
                                 <?php else : ?>
