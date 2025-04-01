@@ -49,12 +49,15 @@
   $site-header-padding-vertical: #{px-to-rem($site-header-padding-vertical-px)};
 
   // .site-header
+  --site-pre-header-initial-height: #{px-to-rem(36px)};
+  --site-pre-header-height: var(--site-pre-header-initial-height);
   --site-header-initial-height: #{px-to-rem(130px)};
   --site-header-height: var(--site-header-initial-height);
   --site-header-padding-vertical: #{$site-header-padding-vertical};
   --site-header-padding-horizontal: var(--wrapper-padding-horizontal);
   --site-header-full-height: calc(
-    var(--wordpress-admin-bar-height) + var(--site-header-height)
+    var(--wordpress-admin-bar-height) + var(--site-header-height) +
+      var(--site-pre-header-height)
   );
 
   // # --------------------------------------------------------------------------------------- #
