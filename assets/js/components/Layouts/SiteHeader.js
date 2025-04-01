@@ -110,11 +110,12 @@ export default class SiteHeader {
 
     togglePanel(button, force = undefined)
     {
-        const panel = document.getElementById(button.dataset.panelTarget);
+        const buttonTarget = button.getAttribute('data-panel-target');
+        const panel = document.getElementById(buttonTarget);
 
         const otherButtons = Array.from(
             this.siteHeaderElement.querySelectorAll(
-                `[data - panel - target = "${button.dataset.panelTarget}"]`
+                `[data-panel-target="${buttonTarget}"]`
             )
         );
 
