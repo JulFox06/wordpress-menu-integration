@@ -22,6 +22,15 @@ $font-face-unicode-range: "U+000-5FF"; // Latin glyphs
 // Add custom fonts below :
 
 @font-face {
+  font-family: font.$name-icons;
+  src: url("../fonts/Icons/republic-group.woff2") format("woff2");
+  font-weight: font.$weight-regular;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $font-face-unicode-range;
+}
+
+@font-face {
   font-family: font.$name-monserrat;
   src:
     local(font.$name-monserrat),
