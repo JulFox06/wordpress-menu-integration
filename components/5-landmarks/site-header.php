@@ -5,20 +5,16 @@ $classList = [
     $args['class'] ?? '',
 ];
 
-$additionalClass = $args['additionalClass'] ?? '';
-$additionalClass = is_array($additionalClass) ? implode(' ', $additionalClass) : $additionalClass;
-
 $mainLogo = get_field('header_main_logo', 'options') ?: [];
 $mainButton = get_field('header_main_button', 'options') ?: [];
 $mainMenu = get_field('header_main_menu', 'options') ?: [];
 
-if (!empty($additionalClass)) {
-    $blockClass[] = $additionalClass;
-}
-
 ?>
 
-<header class="<?= esc_attr(implode(' ', $classList)) ?>">
+<header
+    class="<?= esc_attr(implode(' ', $classList)) ?>"
+    id="site-header"
+>
     <div class="site-header__wrapper">
         <?php if (is_array($mainLogo) && !empty($mainLogo['url'])) : ?>
             <a
@@ -33,7 +29,11 @@ if (!empty($additionalClass)) {
             </a>
         <?php endif; ?>
 
-        <button class="site-header__burger-button" type="button" title="<?= esc_attr(__('Ouvrir ou fermer le menu principal')) ?>">
+        <button
+            class="site-header__burger-button"
+            type="button"
+            title="<?= esc_attr(__('Ouvrir ou fermer le menu principal')) ?>"
+        >
             <span class="site-header__burger-button-trace site-header__burger-button-trace--top"></span>
             <span class="site-header__burger-button-trace site-header__burger-button-trace--middle"></span>
             <span class="site-header__burger-button-trace site-header__burger-button-trace--bottom"></span>
@@ -53,7 +53,7 @@ if (!empty($additionalClass)) {
 
                                 ?>
 
-                                <?php if (isset($mainMenuItem['is_a_link']) && $mainMenuItem['is_a_link'] === false) : ?>
+                                <?php if ( isset($mainMenuItem['is_a_link']) && $mainMenuItem['is_a_link'] === false) : ?>
                                     <?php atom('button', [
                                         'class' => 'site-header__main-menu-item-button',
                                         'label' => $mainMenuItem['label'] ?? '',
