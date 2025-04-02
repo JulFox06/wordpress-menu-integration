@@ -9,11 +9,12 @@
   },
   "require": {
     "php": "8.3.*",
-    "wpengine/advanced-custom-fields-pro": "@stable"
+    "wpackagist-plugin/advanced-custom-fields": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "*",
-    "rector/rector": "*"
+    "rector/rector": "*",
+    "wpengine/advanced-custom-fields-pro": "^6.3"
   },
   "autoload": {
     "psr-4": {
@@ -25,6 +26,10 @@
     "acf": {
       "type": "composer",
       "url": "https://connect.advancedcustomfields.com"
+    },
+    "wppackagist": {
+      "type": "composer",
+      "url": "https://wpackagist.org"
     }
   },
   "config": {

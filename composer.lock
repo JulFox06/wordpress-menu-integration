@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93c3f6b68a19a249a1b63b31f9074d7a",
+    "content-hash": "c9a57edae31f320eb2d91cf1eb862a46",
     "packages": [
         {
             "name": "composer/installers",
@@ -374,9 +374,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "wpengine/advanced-custom-fields-pro": 0
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
