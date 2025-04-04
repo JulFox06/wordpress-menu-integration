@@ -9,12 +9,12 @@
   },
   "require": {
     "php": "8.3.*",
-    "wpackagist-plugin/advanced-custom-fields": "*"
+    "wpackagist-plugin/advanced-custom-fields": "*",
+    "wpengine/advanced-custom-fields-pro": "^6.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "*",
-    "rector/rector": "*",
-    "wpengine/advanced-custom-fields-pro": "^6.3"
+    "rector/rector": "*"
   },
   "autoload": {
     "psr-4": {
